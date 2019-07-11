@@ -44,10 +44,9 @@ import (
 	"github.com/antchfx/htmlquery"
 	"github.com/antchfx/xmlquery"
 	"github.com/kennygrant/sanitize"
+	"github.com/lucbarr/colly/debug"
+	"github.com/lucbarr/colly/storage"
 	"github.com/temoto/robotstxt"
-
-	"github.com/gocolly/colly/debug"
-	"github.com/gocolly/colly/storage"
 )
 
 // Collector provides the scraper instance for a scraping job
@@ -364,7 +363,7 @@ func Debugger(d debug.Debugger) func(*Collector) {
 // Init initializes the Collector's private variables and sets default
 // configuration for the Collector
 func (c *Collector) Init() {
-	c.UserAgent = "colly - https://github.com/gocolly/colly"
+	c.UserAgent = "colly - https://github.com/lucbarr/colly"
 	c.MaxDepth = 0
 	c.store = &storage.InMemoryStorage{}
 	c.store.Init()
